@@ -3,10 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Edu+VIC+WA+NT+Hand+Pre:wght@400..700&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Ultra&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/weatherSearch/style.css">
+    
     <title>Document</title>
   </head>
   <body>
@@ -15,33 +17,43 @@
 
 
     <header>
-      <form action="">
-        <input type="search" placeholder="Enter City" required />
-        <input type="submit" value="search">
+      <form action="" id="formElement">
+        <input
+          id="searchInput"
+          class="search-input"  type="search" placeholder="Enter City" required />
+        <input class="search-button" type="submit" value="search">
       </form>
     </header>
   <main>
+    <div class="weather-app-data">
     <div>
-      <h1>Paris</h1>
-      <p>
+      <h1 class="weather-app-city">Paris</h1>
+      <p class="weather-app-details">
       Saturday 15.32, moderate rain <br>
       Humidity: <strong>87%</strong> Wind : <strong>7.2km/h</strong>
       </p>
     </div>
-   <div>
-    ☀️14°C
+   <div class="temperature-container">
+    <div class="icon">☀️</div>
+    <div id="temp-value" class="temp-value">14</div>
+    <div class="unit">°C</div>
+    
    </div>
-   <p>
-    This project was coded by
-    <a href="http://Malebo" target="_blank" rel="noopener noreferrer"
-      >Malebo</a
-    >
-    and is on <a href="#" target="_blank" rel="noopener noreferrer">Github</a>
-  </p>
+  </div>
+   <footer>
+    <p>
+      This project was coded by
+      <a href="http://Malebo" target="_blank" rel="noopener noreferrer"
+        >Malebo</a
+      >
+      and is on <a href="#" target="_blank" rel="noopener noreferrer">Github</a>
+    </p>
+   </footer>
+  
 
   </main>
 </div>
- 
+ <script src="/weatherSearch/weather.js"></script>
     
   </body>
 </html>
