@@ -64,6 +64,12 @@ a{
     color: #f65282
     
 }
+#humidity {
+    color: #f65282
+}
+#wind{
+    color: #f65282 
+}
 .temperature-container{
     display: flex;
     margin-top: 22px;

@@ -7,8 +7,39 @@ function displayTemperature(response){
     let cityDisplay=document.querySelector(".weather-app-city");
     cityDisplay.innerHTML=response.data.city
 
-}
+    let date =new Date(response.data.time*1000);
 
+    let dayTime=document.querySelector("#dayTime");
+
+    dayTime.innerHTML=formatDate(date);
+    
+
+   
+    let humidity =document.querySelector("#humidity");
+    let apiHumidity=response.data.temperature.humidity;
+
+    humidity.innerHTML=`${apiHumidity}%`;
+
+    let windSpeed=document.querySelector("#wind");
+    let apiWindSpeed =response.data.wind.speed;
+    windSpeed.innerHTML=`${apiWindSpeed}km/h`;
+
+    let description =document.querySelector("#description");
+    let apiDescription =response.data.condition.description;
+    
+    description.innerHTML=`${apiDescription}`;
+
+}
+function formatDate(date){
+    let day = date.getDay();
+    let days =["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    let chosenday=days[day];
+
+    let hour  = date.getHours();
+    let minutes  =date.getMinutes()
+
+    return `${chosenday} ${hour}:${minutes}, `;
+}
 
 function searchApi(city) {
     let key = "t48f904c37f90502d04b44aabcf03oaf";
@@ -20,8 +51,7 @@ function searchApi(city) {
 function search(event){
     event.preventDefault();
     let userCity = document.querySelector("#searchInput");
-    // let cityDisplay=document.querySelector(".weather-app-city");
-    // cityDisplay.innerHTML=userCity.value
+   
     searchApi(userCity.value);
 }
 
