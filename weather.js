@@ -28,6 +28,11 @@ function displayTemperature(response){
     let apiDescription =response.data.condition.description;
     
     description.innerHTML=`${apiDescription}`;
+    let weatherIcon =document.querySelector("#weatherIcon");
+
+    weatherIcon.innerHTML =`<img class="icon" src="${response.data.condition.icon_url}" alt="" ></img>`;
+
+
 
 }
 function formatDate(date){
